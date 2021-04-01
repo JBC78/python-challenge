@@ -46,10 +46,10 @@ with open(budget_data) as csvfile:
             # change in profit loss 
             profit_loss_change = current_month_profit_loss - previous_month_profit_loss
 
-            # Append each month to the months[]
+            # Append each month 
             months.append(row[0])
 
-            # Append each profit_loss_change to the profit_loss_changes[]
+            # Append each profit_loss_change 
             profit_loss_changes.append(profit_loss_change)
 
             # Make the current_month_loss to be previous_month_profit_loss for the next loop
@@ -59,11 +59,11 @@ with open(budget_data) as csvfile:
     sum_profit_loss = sum(profit_loss_changes)
     average_profit_loss = round(sum_profit_loss/(total_months - 1), 2)
 
-    # highest increase / lowest decrease changes in "Profit/Losses" over the entire period
+ 
     highest_change = max(profit_loss_changes) # return largest value
     lowest_change = min(profit_loss_changes) # return smallest value
 
-    # Locate the index value of highest and lowest changes in "Profit/Losses" over the entire period
+   
     highest_month_index = profit_loss_changes.index(highest_change) # use the index to call the highest month
     lowest_month_index = profit_loss_changes.index(lowest_change)   # use the index to call the lowest month
     
@@ -81,12 +81,12 @@ print(f"Greatest Increase in Profits:  {best_month} (${highest_change})")
 print(f"Greatest Decrease in Losses:  {worst_month} (${lowest_change})")
 
 # In addition, your final script should both print the analysis to the terminal and export a text file with the results.
-PyBank_results = os.path.join('Resources', 'PyBank_results.txt')
-with open(PyBank_results, 'w') as txtfile:
-    txtfile.write("Financial Analysis\n")
-    txtfile.write("-------------------------\n")
-    txtfile.write(f"Total Months: {total_months}\n")
-    txtfile.write(f"Total: ${net_profit_loss}\n")
-    txtfile.write(f"Average Change: ${average_profit_loss}\n")
-    txtfile.write(f"Greatest Increase in Profits: {best_month} (${highest_change})\n")
-    txtfile.write(f"Greatest Decrease in Profits: {worst_month} (${lowest_change})\n")
+PyBank_results = os.path.join('Resources','PyBank_results.txt')
+with open(PyBank_results, 'w') as text:
+    text.write("Financial Analysis\n")
+    text.write("-------------------------\n")
+    text.write(f"Total Months: {total_months}\n")
+    text.write(f"Total: ${net_profit_loss}\n")
+    text.write(f"Average Change: ${average_profit_loss}\n")
+    text.write(f"Greatest Increase in Profits: {best_month} (${highest_change})\n")
+    text.write(f"Greatest Decrease in Profits: {worst_month} (${lowest_change})\n")
