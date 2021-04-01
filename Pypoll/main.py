@@ -46,3 +46,12 @@ for i in range(len(candidates)):
 print("-------------------------")
 print(f"Winner: {candidates[candVotes.index(max(candVotes))]}")
 print("-------------------------\n")
+
+with open('Election_results', 'w') as text:
+    text.write("Election Results\n")
+    text.write("-------------------------\n")
+    text.write(f"Total Votes: {len(voter)}\n")
+    text.write("-------------------------\n")
+    text.write(f"Total: ${candidates[i]}: {'{:.2%}'.format(candVotes[i]/len(get_votes))} ({candVotes[i]}\n")
+    text.write("-------------------------\n")
+    text.write(f"Winner: {candidates[candVotes.index(max(candVotes))]})\n")

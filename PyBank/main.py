@@ -81,8 +81,8 @@ print(f"Greatest Increase in Profits:  {best_month} (${highest_change})")
 print(f"Greatest Decrease in Losses:  {worst_month} (${lowest_change})")
 
 # In addition, your final script should both print the analysis to the terminal and export a text file with the results.
-PyBank_results = os.path.join('Resources','PyBank_results.txt')
-with open(PyBank_results, 'w') as text:
+
+with open('PyBank_results', 'w') as text:
     text.write("Financial Analysis\n")
     text.write("-------------------------\n")
     text.write(f"Total Months: {total_months}\n")
