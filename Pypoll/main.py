@@ -14,7 +14,7 @@ get_votes = []
 
 # directory path
 dirname = os.path.dirname(__file__)
-election_data = os.path.join(dirname, 'Resources', 'election_data.csv')
+election_data = os.path.join(dirname,'Resources', 'election_data.csv')
 
 # open election_data.csv file
 with open(election_data) as csvfile:
@@ -47,7 +47,9 @@ print("-------------------------")
 print(f"Winner: {candidates[candVotes.index(max(candVotes))]}")
 print("-------------------------\n")
 
-with open('Election_results', 'w') as text:
+# print to Analysis folder
+election_results = os.path.join(dirname, 'Analysis', 'election_results.txt')
+with open(election_results, 'w') as text:
     text.write("Election Results\n")
     text.write("-------------------------\n")
     text.write(f"Total Votes: {len(voter)}\n")

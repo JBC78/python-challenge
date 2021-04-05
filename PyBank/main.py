@@ -82,7 +82,9 @@ print(f"Greatest Decrease in Losses:  {worst_month} (${lowest_change})")
 
 # In addition, your final script should both print the analysis to the terminal and export a text file with the results.
 
-with open('PyBank_results', 'w') as text:
+dirname = os.path.dirname(__file__)
+PyBank_Results = os.path.join(dirname, 'Analysis', 'PyBank_Results.txt')
+with open(PyBank_Results, 'w') as text:
     text.write("Financial Analysis\n")
     text.write("-------------------------\n")
     text.write(f"Total Months: {total_months}\n")
